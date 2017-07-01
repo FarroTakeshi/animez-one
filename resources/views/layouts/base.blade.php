@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="msapplication-tap-highlight" content="no">
 
-    <title>RENAISSANCE | Dashboard</title>
+    <title>ANIMEZ-ONE | Dashboard</title>
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.min.css">
@@ -18,41 +18,51 @@
     <link rel="stylesheet" href="css/Waves/dist/waves.min.css">
     <link rel="stylesheet" href="css/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
 
-    <link rel="stylesheet" href="js/selects/cs-select.css">
-    <link rel="stylesheet" href="js/selects/cs-skin-elastic.css">
-
-    <link rel="stylesheet" href="css/c3/c3.min.css">
-    <link rel="stylesheet" href="css/zabuto_calendar/zabuto_calendar.min.css">
-
-    <script src="js/menu/modernizr.custom.js"></script>
+    <link rel="stylesheet" href="css/selects/cs-select.css">
+    <link rel="stylesheet" href="css/selects/cs-skin-elastic.css">
 
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
   </head>
-    <body style="overflow: hidden;">
-      <div id="main-wrapper" class="main-wrapper">
-        @include('layouts.head')
+  <body style="overflow: hidden;">
+    <div id="main-wrapper" class="main-wrapper">
+      @include('layouts.head')
+    </div>
+    <!--Content-->
+    <div id="content" class="content container-fluid"">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="content-box">
+            @yield('content')
+          </div>
+        </div>
       </div>
-      <!--content-->
-      <section id="content">
-        <div class="container">
-          <div class="row">
-            <!-- content here-->
-            <div class="col-sm-10 content-area">
-              @yield('content')
-            </div>
-          </div><!-- / row -->
-        </div><!-- / container -->
-      </section>
-      <!-- / content -->
-      <script src="{{ asset('js/jquery/dist/jquery.min.js') }}"></script>
-      <script src="{{ asset('js/menu/classie.js') }}"></script>
-      <script src="{{ asset('js/menu/gnmenu.js') }}"></script>
-      <script src="{{ asset('js/menu/modernizr.custom.js') }}"></script>
-      <script src="{{ asset('js/common.js') }}"></script>
-      <script src="{{ asset('js/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    </div>
+
+    <!--Scripts-->
+    <script src="{{ asset('js/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/menu/modernizr.custom.js') }}"></script>
+    <script src="{{ asset('js/common.js') }}"></script>
+    <script src="{{ asset('js/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/metisMenu/dist/metisMenu.min.js') }}"></script>
+    <script src="{{ asset('js/Waves/dist/waves.min.js') }}"></script>
+    <script src="{{ asset('js/moment/min/moment.min.js') }}"></script>
+    <script src="{{ asset('js/jquery.nicescroll/jquery.nicescroll.min.js') }}"></script>
+    <script src="{{ asset('js/slimScroll/jquery.slimscroll.min.js') }}"></script>
+    <script src="{{ asset('js/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.js') }}"></script>
+
+    <!--Menu-->
+    <script src="{{ asset('js/menu/classie.js') }}"></script>
+    <script src="{{ asset('js/menu/gnmenu.js') }}"></script>
+
+    <!--Selects-->
+    <script src="{{ asset('js/selects/selectFx.js') }}"></script>
+
+    <!--Notification-->
+    <script src="{{ asset('js/notifications/notificationFx.js') }}"></script>
+
     </body>
 </html>

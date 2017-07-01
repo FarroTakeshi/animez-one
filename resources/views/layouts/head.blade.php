@@ -1,4 +1,4 @@
-<ul id="gn-menu" class="gn-menu-main">
+    <ul id="gn-menu" class="gn-menu-main">
       <li class="gn-trigger">
         <a id="menu-toggle" class="gn-icon gn-icon-menu">
           <div id="hamburger">
@@ -16,18 +16,13 @@
         </nav>
       </li>
       <li>
-        <a href="index.html" class="logo">Renaissance<i class="fa fa-toggle-on"></i></a>
+        <a href="index.html" class="logo">ANIMEZ-ONE<i class="fa fa-toggle-on"></i></a>
       </li>
       <li class="top-clock">
         <span class="current-time"></span>
       </li>
       <li class="pull-right">
         <ul class="nav navbar-right right-menu">
-          <li class="members-btn">
-            <a class="show-members" href="#">
-              <i class="fa fa-group"></i>
-            </a>
-          </li>
           <li class="lang">
             <select class="cs-select cs-skin-elastic">
               <option value="english" data-class="flag-england" selected>English</option>
