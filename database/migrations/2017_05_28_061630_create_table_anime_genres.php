@@ -15,6 +15,7 @@ class CreateTableAnimeGenres extends Migration
     {
         Schema::create('anime_genres', function(Blueprint $table){
             $table->increments('id');
+            $table->string('name', 100);
         });
     }
 

@@ -15,10 +15,11 @@ class CreateTableAnimes extends Migration
     {
         Schema::create('animes', function(Blueprint $table){
             $table->increments('id');
-            $table->string('name');
-            $table->string('synopsis');
+            $table->string('name', 100);
+            $table->string('img', 100);
+            $table->string('synopsis', 1000);
             $table->double('valuation', 4, 2);
-
+            $table->integer('season_id')->unsigned()->nullable();
         });
     }
 

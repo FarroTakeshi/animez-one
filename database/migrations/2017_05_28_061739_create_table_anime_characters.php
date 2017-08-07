@@ -13,7 +13,11 @@ class CreateTableAnimeCharacters extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('anime_characters', function( Blueprint $table) {
+            $table->increments('id');
+            $table->string('name', 100);
+            $table->string('seiyuu', 100);
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class CreateTableAnimeCharacters extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('anime_characters');
     }
 }

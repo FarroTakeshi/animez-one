@@ -17,6 +17,7 @@ class CreateTableChapters extends Migration
             $table->increments('id');
             $table->integer('number');
             $table->string('name', 100);
+            $table->integer('anime_id')->unsigned();
         });
     }
 

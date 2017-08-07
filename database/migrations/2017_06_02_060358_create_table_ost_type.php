@@ -15,7 +15,7 @@ class CreateTableOstType extends Migration
     {
         Schema::create('ost_types', function(Blueprint $table ){
             $table->increments('id');
-            $table->string('nombre');
+            $table->string('name', 100);
         });
     }
 
