@@ -16,7 +16,8 @@ class CreateTableAnimeCharacters extends Migration
         Schema::create('characters', function( Blueprint $table) {
             $table->increments('id');
             $table->string('name', 100);
-            $table->string('seiyuu', 100);
+            $table->string('img', 100);
+            $table->integer('seiyuu_id')->unsigned()->nullable();
         });
     }
 
