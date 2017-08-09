@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableAnimeCharacters extends Migration
+class CreateTableCharactersXAnimes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateTableAnimeCharacters extends Migration
      */
     public function up()
     {
-        Schema::create('characters', function( Blueprint $table) {
+        Schema::create('characters_x_animes', function(Blueprint $table){
             $table->increments('id');
-            $table->string('name', 100);
-            $table->string('seiyuu', 100);
+            $table->integer('character_id')->unsigned();
+            $table->integer('anime_id')->unsigned();
         });
     }
 
@@ -27,6 +27,6 @@ class CreateTableAnimeCharacters extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('characters');
+        Schema::dropIfExists('characters_x_animes');
     }
 }
