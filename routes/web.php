@@ -19,3 +19,7 @@ Route::get('home', [
 Route::group(['namespace' => 'App'], function(){
     Route::get('/', 'AnimeController@index')->name('anime.index');
 });
+
+Route::group(['namespace' => 'Admin'], function(){
+    Route::get('/seasons/index', 'SeasonController@index')->name('season.index');
+});
