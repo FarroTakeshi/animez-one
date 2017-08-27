@@ -11,20 +11,20 @@
     <title>ANIMEZ-ONE | Dashboard</title>
 
     <!-- CSS Files -->
-    <link rel="stylesheet" href="css/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="css/metisMenu/dist/metisMenu.min.css">
-    <link rel="stylesheet" href="css/Waves/dist/waves.min.css">
-    <link rel="stylesheet" href="css/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/dist/css/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/mdi/css/materialdesignicons.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/metisMenu/dist/metisMenu.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/Waves/dist/waves.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css') }}" type="text/css">
 
-    <link rel="stylesheet" href="css/selects/cs-select.css">
-    <link rel="stylesheet" href="css/selects/cs-skin-elastic.css">
+    <link rel="stylesheet" href="{{ asset('css/selects/cs-select.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/selects/cs-skin-elastic.css') }}" type="text/css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css">
 
-    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
 
   </head>
   <body style="overflow: hidden;">
