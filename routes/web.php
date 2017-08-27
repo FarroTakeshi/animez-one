@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('home', [
     'as' => 'home',
     'uses' => 'HomeController@index'
 ]);
+
+Route::group(['namespace' => 'App'], function(){
+    Route::get('/', 'AnimeController@index')->name('anime.index');
+});
