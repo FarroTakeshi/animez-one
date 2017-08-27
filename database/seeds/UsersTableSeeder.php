@@ -11,11 +11,14 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('users')->truncate();
-      DB::table('users')->insert([
-         'name'     => 'admin',
-         'email'    => 'admin@admin.com',
-         'password' => bcrypt('secret'),
-         ]);
+        $users = [
+            [
+                'name'  => 'Admin',
+                'email' => 'admin@admin.com',
+                'password' => Hash::make('secret'),
+            ],
+        ];
+
+        DB::table('users')->insert($users);
     }
 }
