@@ -25,5 +25,14 @@
       </tbody>
     </table>
   </div>
+  <div>
+    <a class="btn btn-default btn-square" href="{{ route('anime.index') }}">
+      <span class="fa fa-fw fa-undo"></span> Return
+    </a>
+
+    <a class="btn btn-success btn-square" type="button" href="{{ route('season.create') }}">
+      <span class=" fa fa-fw fa-book"></span> Add Season
+    </a>
+  </div>
 </div>
 @endsection
