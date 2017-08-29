@@ -22,4 +22,5 @@ Route::group(['namespace' => 'App'], function(){
 
 Route::group(['namespace' => 'Admin'], function(){
     Route::get('/seasons/index', 'SeasonController@index')->name('season.index');
+    Route::get('/seasons/create', 'SeasonController@create')->name('season.create');
 });
