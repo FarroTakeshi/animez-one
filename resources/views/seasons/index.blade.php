@@ -6,6 +6,9 @@
   @if(session()->has('message'))
   <div class="alert alert-{{ strpos( session('message') , 'deleted') ? 'danger' : 'success' }}"> {{ session('message') }}</div>
   @endif
+  <div>
+    <h2>Seasons</h2>
+  </div>
   <div class="table-responsive">
     <table class="table">
       <thead>
