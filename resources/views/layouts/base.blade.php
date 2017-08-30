@@ -35,9 +35,7 @@
     <div id="content" class="content container-fluid"">
       <div class="row">
         <div class="col-sm-12">
-          <div class="content-box">
-            @yield('content')
-          </div>
+          @yield('content')
         </div>
       </div>
     </div>
