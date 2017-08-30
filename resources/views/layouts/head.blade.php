@@ -16,7 +16,7 @@
         </nav>
       </li>
       <li>
-        <a href="index.html" class="logo">ANIMEZ-ONE<i class="fa fa-toggle-on"></i></a>
+        <a href="{{ route('anime.index') }}" class="logo">ANIMEZ-ONE<i class="fa fa-toggle-on"></i></a>
       </li>
       <li class="top-clock">
         <span class="current-time"></span>
@@ -73,7 +73,7 @@
           @else
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expand="false">
-              {{ Auth::user()->name }} <span class="caret"></span>
+              {{ Auth::user()->username }} <span class="caret"></span>
             </a>
 
             <ul class="dropdown-menu" role="menu">
