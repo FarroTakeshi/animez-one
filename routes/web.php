@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('home', [
-    'as' => 'home',
-    'uses' => 'HomeController@index'
-]);
+Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['namespace' => 'App'], function(){
     Route::get('/', 'AnimeController@index')->name('anime.index');
@@ -28,3 +25,5 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::post('/seasons/{season}/edit', 'SeasonController@update')->name('season.update');
     Route::get('/seasons/{season}/delete', 'SeasonController@delete')->name('season.delete');
 });
+
+Auth::routes();
