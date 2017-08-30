@@ -4,7 +4,7 @@
 
 <div class="content-box big-box">
   @if(session()->has('message'))
-  <div class="alert alert-success"> {{ session('message') }}</div>
+  <div class="alert alert-{{ strpos( session('message') , 'deleted') ? 'danger' : 'success' }}"> {{ session('message') }}</div>
   @endif
   <div class="table-responsive">
     <table class="table">
@@ -25,6 +25,9 @@
             <td>
               <a class="btn btn-default btn-square" href="{{ route('season.edit', compact('season')) }}">
                 <span class="fa fa-edit"></span> Edit
+              </a>
+              <a class="btn btn-danger btn-square" href="{{ route('season.delete', compact('season')) }}">
+                <span class="fa fa-remove"></span> Delete
               </a>
             </td>
           </tr>

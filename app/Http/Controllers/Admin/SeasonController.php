@@ -37,7 +37,7 @@ class SeasonController extends Controller
         ]);
 
         return redirect()->route('season.index')
-                         ->with('message', 'New season registered');
+                         ->with('message', 'New season registered successfully');
     }
 
     public function edit(Season $season) {
@@ -61,6 +61,13 @@ class SeasonController extends Controller
         $season->save();
 
         return redirect()->route('season.index')
-                         ->with('message', 'Season Updated');
+                         ->with('message', 'Season updated successfully');
+    }
+
+    public function delete(Season $season) {
+        $season->delete();
+
+        return redirect()->route('season.index')
+                         ->with('message', 'Season deleted successfully');
     }
 }
