@@ -3,6 +3,9 @@
 @section('content')
 
 <div class="content-box big-box">
+  @if(session()->has('message'))
+  <div class="alert alert-success"> {{ session('message') }}</div>
+  @endif
   <div class="table-responsive">
     <table class="table">
       <thead>
@@ -19,7 +22,11 @@
             <td>{{ $season->start_date }}</td>
             <td>{{ $season->end_date }}</td>
             <td>{{ $season->year }}</td>
-            <td></td>
+            <td>
+              <a class="btn btn-default btn-square" href="{{ route('season.edit', compact('season')) }}">
+                <span class="fa fa-edit"></span> Edit
+              </a>
+            </td>
           </tr>
         @endforeach
       </tbody>
@@ -29,7 +36,6 @@
     <a class="btn btn-default btn-square" href="{{ route('anime.index') }}">
       <span class="fa fa-fw fa-undo"></span> Return
     </a>
-
     <a class="btn btn-success btn-square" type="button" href="{{ route('season.create') }}">
       <span class=" fa fa-fw fa-book"></span> Add Season
     </a>

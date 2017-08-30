@@ -39,4 +39,28 @@ class SeasonController extends Controller
         return redirect()->route('season.index')
                          ->with('message', 'New season registered');
     }
+
+    public function edit(Season $season) {
+        return view('seasons.edit', compact('season'));
+    }
+
+    public function update(Season $season) {
+        $this->validate(request(), [
+            'name'       => 'required',
+            'start_date' => 'required|date',
+            'end_date'   => 'required|date',
+        ]);
+
+        $date = new Carbon( request('start_date') );
+
+        $season->name       = request('name');
+        $season->start_date = request('start_date');
+        $season->end_date   = request('end_date');
+        $season->year       = $date->year;
+
+        $season->save();
+
+        return redirect()->route('season.index')
+                         ->with('message', 'Season Updated');
+    }
 }
