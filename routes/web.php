@@ -26,4 +26,13 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::get('/seasons/{season}/delete', 'SeasonController@delete')->name('season.delete');
 });
 
+Route::group(['namespace' => 'Admin'], function(){
+    Route::get('/anime_genres/index', 'AnimeGenreController@index')->name('anime_genre.index');
+    Route::get('/anime_genres/create', 'AnimeGenreController@create')->name('anime_genre.create');
+    Route::post('/anime_genres/create', 'AnimeGenreController@store')->name('anime_genre.store');
+    Route::get('/anime_genres/{anime_genre}/edit', 'AnimeGenreController@edit')->name('anime_genre.edit');
+    Route::post('/anime_genres/{anime_genre}/edit', 'AnimeGenreController@update')->name('anime_genre.update');
+    Route::get('/anime_genres/{anime_genre}/delete', 'AnimeGenreController@delete')->name('anime_genre.delete');
+});
+
 Auth::routes();
