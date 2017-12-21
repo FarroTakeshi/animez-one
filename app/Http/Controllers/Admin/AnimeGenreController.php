@@ -48,4 +48,11 @@ class AnimeGenreController extends Controller
         return redirect()->route('anime_genre.index')
                          ->with('message', 'Anime genre updated successfully');
     }
+
+    public function delete(AnimeGenre $anime_genre) {
+        $anime_genre->delete();
+
+        return redirect()->route('anime_genre.index')
+                         ->with('message', 'Anime genre deleted successfully');
+    }
 }
