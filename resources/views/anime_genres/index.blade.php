@@ -37,7 +37,7 @@
       <span class="fa fa-fw fa-undo"></span> Return
     </a>
     <a class="btn btn-success btn-square" type="button" href="{{ route('anime_genre.create') }}">
-      <span class=" fa fa-fw fa-book"></span> Add Anime genre
+      <span class=" fa fa-fw fa-university"></span> Add Anime genre
     </a>
   </div>
 </div>

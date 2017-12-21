@@ -14,4 +14,21 @@ class AnimeGenreController extends Controller
 
         return view('anime_genres.index', compact('anime_genres'));
     }
+
+    public function create() {
+        return view('anime_genres.create');
+    }
+
+    public function store() {
+        $this->validate(request(), [
+            'name' => 'required',
+        ]);
+
+        $anime_genre = AnimeGenre::create([
+            'name' => request('name'),
+        ]);
+
+        return redirect()->route('anime_genre.index')
+                         ->with('message', 'anime genre registered successfully');
+    }
 }
