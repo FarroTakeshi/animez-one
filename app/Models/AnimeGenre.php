@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class AnimeGenre extends Model
 {
+    protected $table = 'anime_genres';
+
+    public $timestamps = false;
+
     protected $fillable = [ 'name' ];
 
     public function animes(){
