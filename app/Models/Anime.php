@@ -8,12 +8,11 @@ class Anime extends Model
 {
     protected $fillable = [
         'name',
-        'start_date',
-        'end_date',
-        'year',
+        'image',
+        'synopsis',
     ];
 
-    public function animes(){
+    public function season(){
         return $this->belongsTo(Season::class);
     }
 
