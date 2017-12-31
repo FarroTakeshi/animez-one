@@ -12,7 +12,10 @@ const { mix } = require('laravel-mix');
 
 js('resources/assets/js/app.js', 'public/js')
  */
-mix.copyDirectory('resources/assets/img', 'public/img');
-   .sass('resources/assets/sass/style.scss', 'public/css')
-   //.sass('resources/assets/sass/*.scss', 'public/css')
-   .sourceMaps();
+mix.options({
+   processCssUrls: false // Process/optimize relative stylesheet url()'s. Set to false, if you don't want them touched.
+});
+
+mix.copyDirectory('resources/assets/img', 'public/img')
+   .copyDirectory('resources/assets/fonts', 'public/fonts')
+   .sass('resources/assets/sass/style.scss', 'public/css');
