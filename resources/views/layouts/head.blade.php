@@ -1,12 +1,12 @@
     <ul id="gn-menu" class="gn-menu-main">
       <li class="gn-trigger">
-        <a id="menu-toggle" class="gn-icon gn-icon-menu">
-          <div id="hamburger">
+        <a id="menu-toggle" class="menu-toggle gn-icon gn-icon-menu">
+          <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
           </div>
-          <div id="cross">
+          <div class="cross">
             <span></span>
             <span></span>
           </div>
