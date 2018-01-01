@@ -17,7 +17,7 @@
   </div>
   @endif
 
-  <form id="form_anime" class="" method="POST">
+  <form id="form_anime" class="" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <div class="form-group">
       <label>Name</label>
@@ -26,7 +26,7 @@
 
     <div class="form-group">
       <label>Synopsis</label>
-      <textarea class="form-control" rows="5" id="synopsis"></textarea>
+      <textarea class="form-control" rows="5" name="synopsis"></textarea>
     </div>
 
     <div class="form-group">
@@ -52,9 +52,12 @@
       @endforeach
     </div>
 
+    <div class="form-group">
+      <label>Image</label>
+    </div>
     <div class="fileinput fileinput-new input-group" data-provides="fileinput">
       <span class="input-group-addon btn btn-default btn-file"><span class="fileinput-new"><i class="fa fa-file"></i> Choose file</span><span class="fileinput-exists">Change</span>
-        <input type="hidden"><input type="file" name="...">
+        <input type="hidden"><input type="file" name="image">
       </span>
       <div class="form-control" data-trigger="fileinput"><span class="fileinput-filename"></span>
       </div>

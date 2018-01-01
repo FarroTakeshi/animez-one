@@ -6,10 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Anime extends Model
 {
+    protected $table = 'animes';
+
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
-        'image',
         'synopsis',
+        'season',
+        'image',
+        'valuation',
     ];
 
     public function season(){
