@@ -25,6 +25,7 @@
 
     <link rel="icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon">
+    @stack('extra-css')
 
   </head>
   <body style="overflow: hidden;">
@@ -61,6 +62,8 @@
 
     <!--Notification-->
     <script src="{{ asset('js/notifications/notificationFx.js') }}"></script>
+
+    @stack('extra-js')
 
     </body>
 </html>
