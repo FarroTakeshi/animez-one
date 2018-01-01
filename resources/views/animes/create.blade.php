@@ -26,7 +26,7 @@
 
     <div class="form-group">
       <label>Synopsis</label>
-      <input type="date" class="form-control" name="start_date">
+      <textarea class="form-control" rows="5" id="synopsis"></textarea>
     </div>
 
     <div class="form-group">
