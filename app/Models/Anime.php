@@ -14,8 +14,9 @@ class Anime extends Model
         'name',
         'synopsis',
         'season',
-        'image',
+        'img',
         'valuation',
+        'season_id'
     ];
 
     public function season(){
