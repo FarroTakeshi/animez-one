@@ -52,10 +52,38 @@ class AnimeController extends Controller
         $anime->img = $path;
         $anime->save();
 
-        $anime_genres = request('anime_genres');
+        $anime_genres = request('anime_genre');
         $anime->anime_genres()->sync($anime_genres);
 
         return redirect()->route('anime.index')
                          ->with('message', 'anime registered successfully');
     }
+
+    public function edit(Anime $anime) {
+        $anime_genres       = AnimeGenre::all();
+        $seasons            = Season::all();
+        $anime_genres_anime = $anime->getAnimeGenreIds();
+
+        return view('animes.edit', compact('anime', 'seasons', 'anime_genres', 'anime_genres_anime'));
+    }
+
+    public function update(Anime $anime) {
+        $this->validate(request(), [
+            'name'        => 'required',
+            'synopsis'    => 'required',
+            'season'      => 'required',
+            'anime_genre' => 'required',
+            'image'       => 'required',
+        ]);
+
+        $anime->name      = request('name');
+        $anime->synopsis  = request('synopsis');
+        $anime->season_id = request('season');
+
+        $anime_genre->save();
+
+        return redirect()->route('anime_genre.index')
+                         ->with('message', 'Anime genre updated successfully');
+    }
+
 }
