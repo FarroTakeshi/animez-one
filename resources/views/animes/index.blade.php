@@ -16,7 +16,7 @@
             <div class="panel-body">
               <div class="anime-image col-xs-2">
                 <a>
-                  <img class="img-responsive" src="{{ count($anime->img) > 0 ? $anime->img : '' }}"/>
+                  <img class="img-responsive" src="{{ count($anime->img_path) > 0 ? $anime->img_path : '' }}"/>
                 </a>
               </div>
               <div class="anime-synopsis col-xs-10">

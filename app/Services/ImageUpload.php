@@ -11,13 +11,10 @@ use Image;
 
 class ImageUpload
 {
-    public function save($file_image, $image_name)
+    public function save($file_image, $file_path)
     {
-        $path = $image_name.'.'.$file_image->getClientOriginalExtension();
         Image::make($file_image->getRealPath())->resize(500, null, function ($constraint) {
             $constraint->aspectRatio();
-        })->save(public_path($path));
-
-        return url($path);
+        })->save(public_path($file_path));
     }
 }

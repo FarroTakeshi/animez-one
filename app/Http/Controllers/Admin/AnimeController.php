@@ -37,23 +37,24 @@ class AnimeController extends Controller
             'image'       => 'required',
         ]);
 
-        $file     = request()->file('image');
-
         $anime = Anime::create([
             'name'        => request('name'),
             'synopsis'    => request('synopsis'),
             'season_id'   => request('season'),
-            'valuation'   => 0,
         ]);
 
-        $filename = "img/animes/anime_{$anime->id}";
-        $path = $image_uploader->save($file, $filename);
-
-        $anime->img = $path;
-        $anime->save();
-
+        $file         = request()->file('image');
         $anime_genres = request('anime_genre');
+
         $anime->anime_genres()->sync($anime_genres);
+
+        $filename  = "anime_{$anime->id}".'.'.$file->getClientOriginalExtension();
+        $file_path = "img/animes/".$filename;
+        $image_uploader->save($file, $file_path);
+
+        $anime->img      = $filename;
+        $anime->img_path = $file_path;
+        $anime->save();
 
         return redirect()->route('anime.index')
                          ->with('message', 'anime registered successfully');
@@ -67,7 +68,7 @@ class AnimeController extends Controller
         return view('animes.edit', compact('anime', 'seasons', 'anime_genres', 'anime_genres_anime'));
     }
 
-    public function update(Anime $anime) {
+    public function update(Anime $anime, ImageUpload $image_uploader) {
         $this->validate(request(), [
             'name'        => 'required',
             'synopsis'    => 'required',
@@ -80,10 +81,23 @@ class AnimeController extends Controller
         $anime->synopsis  = request('synopsis');
         $anime->season_id = request('season');
 
-        $anime_genre->save();
+        $anime_genres = request('anime_genre');
+        $anime->anime_genres()->sync($anime_genres);
+
+        if(request()->file('image')){
+            $file      = request()->file('image');
+            $filename  = "anime_{$anime->id}".'.'.$file->getClientOriginalExtension();
+            $file_path = "img/animes/".$filename;
+
+            $image_uploader->save($file, $file_path);
+
+            $anime->img      = $filename;
+            $anime->img_path = $file_path;
+            $anime->save();
+        }
 
         return redirect()->route('anime_genre.index')
-                         ->with('message', 'Anime genre updated successfully');
+                         ->with('message', 'Anime updated successfully');
     }
 
 }
