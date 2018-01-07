@@ -13,9 +13,8 @@ class Anime extends Model
     protected $fillable = [
         'name',
         'synopsis',
-        'season',
         'img',
-        'valuation',
+        'img_path',
         'season_id'
     ];
 
