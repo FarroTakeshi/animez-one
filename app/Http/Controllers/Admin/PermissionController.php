@@ -12,11 +12,11 @@ class PermissionController extends Controller
     public function index() {
         $permissions = Permission::all();
 
-        return view('permission.index', compact('permissions'));
+        return view('permissions.index', compact('permissions'));
     }
 
     public function create(){
-        return view('permission.create');
+        return view('permissions.create');
     }
     public function store(){
         $this->validate(request(), [
@@ -28,7 +28,7 @@ class PermissionController extends Controller
             'description'     => request('description'),
         ]);
 
-        return redirect()->route('permission.index')
+        return redirect()->route('permissions.index')
                          ->with('message', 'New permission registered successfully');
     }
     public function edit(Permission $permission){
@@ -44,13 +44,13 @@ class PermissionController extends Controller
 
         $permission->save();
 
-        return redirect()->route('permission.index')
+        return redirect()->route('permissions.index')
                          ->with('message', 'Permission updated successfully');
     }
     public function delete(Permission $permission){
         $permission->delete();
 
-        return redirect()->route('permission.index')
+        return redirect()->route('permissions.index')
                          ->with('message', 'Permission deleted successfully');
     }
 }
