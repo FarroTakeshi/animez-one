@@ -35,4 +35,9 @@ class User extends Authenticatable
     public function roles(){
         return $this->belongsToMany(Role::class, 'roles_x_users', 'user_id', 'role_id');
     }
+
+    public function isAdmin() 
+    {
+        return $this->roles()->where('role_id', 1)->first();
+    }
 }

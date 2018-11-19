@@ -18,6 +18,14 @@ Route::group(['namespace' => 'App'], function(){
 });
 
 Route::group(['namespace' => 'Admin'], function(){
+    //Permissions
+    Route::get('/permissions/index', 'PermissionController@index')->name('permission.index');
+    Route::get('/permissions/create', 'PermissionController@create')->name('permission.create');
+    Route::post('/permissions/create', 'PermissionController@store')->name('permission.store');
+    Route::get('/permissions/{season}/edit', 'PermissionController@edit')->name('permission.edit');
+    Route::post('/permissions/{season}/edit', 'PermissionController@update')->name('permission.update');
+    Route::get('/permissions/{season}/delete', 'PermissionController@delete')->name('permission.delete');
+
     //Season
     Route::get('/seasons/index', 'SeasonController@index')->name('season.index');
     Route::get('/seasons/create', 'SeasonController@create')->name('season.create');
