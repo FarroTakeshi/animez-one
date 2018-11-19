@@ -1,0 +1,11 @@
+.panel-body {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.anime-options {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+} 

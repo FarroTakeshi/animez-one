@@ -30,14 +30,16 @@
               <strong>Score: </strong>
               <span>{{ $anime->valuation }} </span>
             </div>
+             @if(!$is_a_guest && $user->isAdmin())
               <div class="anime-options">
-                <a id="edit-button" class="btn btn-default btn-square" href="{{ route('anime.edit', compact('anime')) }}">
+                <a class="btn btn-default btn-square" href="{{ route('anime.edit', compact('anime')) }}">
                   <span class="fa fa-edit"></span> Edit
                 </a>
-                <a id="delete-button" class="btn btn-danger btn-square" href="{{ route('anime.delete', compact('anime')) }}">
+                <a class="btn btn-danger btn-square" href="{{ route('anime.delete', compact('anime')) }}">
                   <span class="fa fa-remove"></span> Delete
                 </a>
               </div>
+            @endif
           </div>
         </div>
       </div>
