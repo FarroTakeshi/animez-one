@@ -47,6 +47,7 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::post('/animes/create', 'AnimeController@store')->name('anime.store');
     Route::get('/animes/{anime}/edit', 'AnimeController@edit')->name('anime.edit');
     Route::post('/animes/{anime}/edit', 'AnimeController@update')->name('anime.update');
+    Route::get('/animes/{anime}/delete', 'AnimeController@delete')->name('anime.delete');
 });
 
 Auth::routes();
