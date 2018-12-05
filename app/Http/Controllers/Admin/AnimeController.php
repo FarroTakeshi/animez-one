@@ -96,8 +96,19 @@ class AnimeController extends Controller
             $anime->save();
         }
 
-        return redirect()->route('anime_genre.index')
+        return redirect()->route('anime.index')
                          ->with('message', 'Anime updated successfully');
+    }
+
+    public function delete(Anime $anime, ImageUpload $image_uploader)
+    {
+        $file_path = $anime->img_path;
+
+        $image_uploader->delete($file_path);
+        $anime->delete();
+
+        return redirect()->route('anime.index')
+                         ->with('message', 'Anime deleted successfully');
     }
 
 }

@@ -63,6 +63,9 @@
     <!--Notification-->
     <script src="{{ asset('js/notifications/notificationFx.js') }}"></script>
 
+    <!--VueJs-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     @stack('extra-js')
 
     </body>

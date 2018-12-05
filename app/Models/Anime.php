@@ -28,5 +28,5 @@ class Anime extends Model
 
     public function getAnimeGenreIds(){
       return $this->anime_genres->pluck('id')->toArray();
-   }
+    }
 }
