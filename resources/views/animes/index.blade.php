@@ -4,6 +4,10 @@
     <link href="{{ asset('css/backend/animes.css') }}" rel="stylesheet">
 @endpush
 
+@push('extra-js')
+    <script src="{{ asset('js/backend/animes.js') }}"></script>
+@endpush
+
 @section('content')
 @if(session()->has('message'))
   <div class="alert alert-{{ strpos( session('message') , 'deleted') ? 'danger' : 'success' }}"> {{ session('message') }}</div>
@@ -54,6 +58,11 @@
       </div>
       @endforeach
     </div>
+  </div>
+  <div>
+    <nav class="text-center">
+      {{ $animes->links() }}
+    </nav>
   </div>
   @if(!$is_a_guest && $user->isAdmin())
     <div class="row">

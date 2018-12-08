@@ -12,7 +12,7 @@ class AnimeController extends Controller
 {
     public function index()
     {
-        $animes     = Anime::all();
+        $animes     = Anime::paginate(10);
         $user       = Auth::user();
         $is_a_guest = Auth::guest();
 
