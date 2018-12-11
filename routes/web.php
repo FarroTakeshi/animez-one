@@ -15,6 +15,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['namespace' => 'App'], function(){
     Route::get('/', 'AnimeController@index')->name('anime.index');
+    Route::get('/searchredirect', function(){
+     
+        /* Nuevo: si el argumento search está vacío regresar a la página anterior */
+        if (empty(request('query'))) return redirect()->back();
+
+        $query = urlencode(e(request('query')));
+        $route = "/search/$query";
+        return redirect($route);
+    });
+    Route::get("/search/{query}", "AnimeController@search");
 });
 
 Route::group(['namespace' => 'Admin'], function(){
@@ -47,6 +57,7 @@ Route::group(['namespace' => 'Admin'], function(){
     Route::post('/animes/create', 'AnimeController@store')->name('anime.store');
     Route::get('/animes/{anime}/edit', 'AnimeController@edit')->name('anime.edit');
     Route::post('/animes/{anime}/edit', 'AnimeController@update')->name('anime.update');
+    Route::get('/animes/{anime}/delete', 'AnimeController@delete')->name('anime.delete');
 });
 
 Auth::routes();

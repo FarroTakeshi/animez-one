@@ -1,0 +1,1 @@
+$('.pagination').addClass('divided animated-btns');
